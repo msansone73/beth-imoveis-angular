@@ -21,9 +21,7 @@ export class LoginComponent implements OnInit  {
 
 
   doLogin(){
-    this.auth.login(this.login).subscribe(
-      l=> alert('email='+l.email)
-    )
+    this.auth.login(this.login)
   }
 
 }
