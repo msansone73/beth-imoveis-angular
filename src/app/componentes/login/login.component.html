@@ -1,0 +1,16 @@
+<div class="container">
+  <div>
+    <label for="email">E-mail: </label>
+    <input type="email" name="email" id="email"
+    [(ngModel)]="login.email">
+  </div>
+  <div>
+    <label for="pass">Senha: </label>
+    <input type="password" name="password" id="password"
+    [(ngModel)]="login.password">
+  </div>
+  <div>
+    <button class="btn-dark" (click)="doLogin()">Login</button>
+  </div>
+
+</div>

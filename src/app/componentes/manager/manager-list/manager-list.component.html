@@ -1,0 +1,26 @@
+<p>Gerentes</p>
+<div class="content">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Fone</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let man of managers">
+        <th scope="row">1</th>
+        <td>{{man.name}}</td>
+        <td>{{man.email}}</td>
+        <td>{{man.fone}}</td>
+        <td><button type="button" class="btn btn-primary" (click)="edit(man.id)">editar</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="del(man.id)">excluir</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
