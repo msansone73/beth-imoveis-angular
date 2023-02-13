@@ -37,4 +37,20 @@ export class AuthenticationServiceService {
   public isLogged(): Manager {
     return AuthenticationServiceService.managerLoged;
   }
+
+  public logout(){
+    AuthenticationServiceService.managerLoged={
+      id: 0,
+      name: '',
+      password: '',
+      fone: '',
+      foneOther: '',
+      email: '',
+      emailOther: '',
+      inativo: false,
+      admin: false
+    };
+    this.atualizar.emit(AuthenticationServiceService.managerLoged);
+
+  }
 }

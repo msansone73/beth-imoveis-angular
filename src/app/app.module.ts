@@ -10,6 +10,7 @@ import { LandlordListComponent } from './componentes/landlord/landlord-list/land
 import { ManagerListComponent } from './componentes/manager/manager-list/manager-list.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { CanActivateRouteGuard } from './services/CanActivateRouteGuard';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CanActivateRouteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Manager } from 'src/app/model/manager';
 import { AuthenticationServiceService } from 'src/app/services/authentication-service.service';
 
@@ -21,11 +22,18 @@ export class MenuComponent implements OnInit{
     admin: false
   };
 
-  constructor(private auth: AuthenticationServiceService){}
+  constructor(
+    private auth: AuthenticationServiceService,
+    private router: Router
+    ){}
   ngOnInit(): void {
     this.auth.atualizar.subscribe(f=> this.manager=f)
   }
 
+  doLogout() {
+    this.auth.logout()
+    this.router.navigate(['/login'])
+  }
 
 
 
