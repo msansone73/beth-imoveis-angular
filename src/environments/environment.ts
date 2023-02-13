@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'http://msansone.com.br:8080/api/'
+  apiUrl: 'https://msansone.com.br/api/bi/'
 };
