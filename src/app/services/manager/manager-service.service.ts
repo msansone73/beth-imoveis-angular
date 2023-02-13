@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Manager } from 'src/app/model/manager';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ManagerServiceService {
 
-  apiUrl = 'http://localhost/api/manager';
+  apiUrl = environment.apiUrl+'manager';
 
   httpOptions = {
     header: new Headers({
