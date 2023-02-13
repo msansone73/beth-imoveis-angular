@@ -11,6 +11,7 @@ import { ManagerListComponent } from './componentes/manager/manager-list/manager
 import { LoginComponent } from './componentes/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CanActivateRouteGuard } from './services/CanActivateRouteGuard';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { CanActivateRouteGuard } from './services/CanActivateRouteGuard';
     HttpClientModule,
     FormsModule
   ],
-  providers: [CanActivateRouteGuard],
+  providers: [CanActivateRouteGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
