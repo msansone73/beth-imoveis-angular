@@ -12,6 +12,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CanActivateRouteGuard } from './services/CanActivateRouteGuard';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ManagerContentComponent } from './componentes/manager/manager-content/manager-content.component';
+import { ManagerEditComponent } from './componentes/manager/manager-edit/manager-edit.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     HomeComponent,
     LandlordListComponent,
     ManagerListComponent,
-    LoginComponent
+    LoginComponent,
+    ManagerContentComponent,
+    ManagerEditComponent
   ],
   imports: [
     BrowserModule,

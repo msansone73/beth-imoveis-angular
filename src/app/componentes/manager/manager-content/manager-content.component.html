@@ -1,0 +1,10 @@
+<p>Gerentes</p>
+
+<app-manager-edit
+  *ngIf="mode=='edit'"
+  [managerEditado]="managerEditado"
+  (voltarLista)="voltarLista($event)"/>
+
+<app-manager-list
+  *ngIf="mode=='list'"
+  (mudouId)="alteraIdEditado($event)"/>

@@ -25,4 +25,12 @@ export class ManagerServiceService {
   public getAllManagers(): Observable<Manager[]>{
     return this.httpClient.get<Manager[]>(this.apiUrl);
   }
+
+  public getById(id:number): Observable<Manager>{
+    return this.httpClient.get<Manager>(this.apiUrl+"/"+id);
+
+  }
+  public salvar(manager:Manager): Observable<Manager>{
+    return this.httpClient.post<Manager>(this.apiUrl,manager)
+  }
 }

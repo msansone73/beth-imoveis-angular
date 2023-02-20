@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Manager } from 'src/app/model/manager';
 import { ManagerServiceService } from 'src/app/services/manager/manager-service.service';
 
@@ -8,8 +8,12 @@ import { ManagerServiceService } from 'src/app/services/manager/manager-service.
   styleUrls: ['./manager-list.component.scss']
 })
 export class ManagerListComponent implements OnInit {
+[x: string]: any;
 
   managers: Manager[] = [];
+  @Input()
+  idEditado: number=-1
+  @Output() mudouId = new EventEmitter<number>();
 
   constructor(
     public managerservice: ManagerServiceService
@@ -28,12 +32,17 @@ export class ManagerListComponent implements OnInit {
 
   edit(id:number){
     console.log('foi editar'+id);
-
+    this.mudouId.emit(id)
   }
 
   del(id:number){
     console.log('foi deletado'+id);
 
+  }
+
+  onNovo(){
+    console.log('abrir novo')
+    this.mudouId.emit(-1)
   }
 
 }
