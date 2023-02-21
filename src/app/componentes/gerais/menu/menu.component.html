@@ -9,7 +9,7 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
         </li>
-        <li class="nav-item" *ngIf="manager.email!=''" >
+        <li class="nav-item" *ngIf="manager.email!='' && manager.admin==true" >
           <a class="nav-link active" aria-current="page" routerLink="/manager">Gerente</a>
         </li>
         <li class="nav-item" *ngIf="manager.email!=''" >

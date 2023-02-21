@@ -14,6 +14,8 @@ import { CanActivateRouteGuard } from './services/CanActivateRouteGuard';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ManagerContentComponent } from './componentes/manager/manager-content/manager-content.component';
 import { ManagerEditComponent } from './componentes/manager/manager-edit/manager-edit.component';
+import { LandlordContentComponent } from './componentes/landlord/landlord-content/landlord-content.component';
+import { LandlordEditComponent } from './componentes/landlord/landlord-edit/landlord-edit.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ManagerEditComponent } from './componentes/manager/manager-edit/manager
     ManagerListComponent,
     LoginComponent,
     ManagerContentComponent,
-    ManagerEditComponent
+    ManagerEditComponent,
+    LandlordContentComponent,
+    LandlordEditComponent
   ],
   imports: [
     BrowserModule,
