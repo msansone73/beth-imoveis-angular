@@ -1,9 +1,31 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, OnInit } from '@angular/core';
+import { Manager } from 'src/app/model/manager';
+import { environment } from 'src/environments/environment';
+import { AuthenticationServiceService } from '../authentication-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LandlordService {
+export class LandlordService implements OnInit {
 
-  constructor() { }
+  apiUrl = environment.apiUrl+'landlord'
+  managerLoged: Manager=this.auth.isLogged()
+
+  httpOptions = {
+    header: new Headers({
+      'Content-Type':'application/json',
+      'Access-Control-Allow-Origin': '**'
+    })
+  }
+
+  constructor(
+    private auth: AuthenticationServiceService,
+    private http: HttpClient
+  ) { }
+
+  ngOnInit(): void {
+  }
+
+  
 }
