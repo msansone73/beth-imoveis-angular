@@ -1,1 +1,26 @@
-<p>landlord-list works!</p>
+<div class="content">
+  <button (click)="onNovo()" class="btn btn-primary">Novo</button>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Fone</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let land of landlords">
+        <th scope="row">{{land.id}}</th>
+        <td>{{land.name}}</td>
+        <td>{{land.email}}</td>
+        <td>{{land.fone}}</td>
+        <td><button type="button" class="btn btn-primary" (click)="edit(land.id)">editar</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="del(land.id)">excluir</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
