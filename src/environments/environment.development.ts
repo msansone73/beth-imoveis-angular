@@ -1,4 +1,3 @@
 export const environment = {
-  //apiUrl: 'https://msansone.com.br/api/bi/'
-  apiUrl: 'http://localhost:8080/api/'
+  apiUrl: 'http://localhost:8080/api/xxx/'
 };
