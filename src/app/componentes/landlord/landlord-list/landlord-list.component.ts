@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Landlord } from 'src/app/model/landlord';
 import { AuthenticationServiceService } from 'src/app/services/authentication-service.service';
 import { LandlordService } from 'src/app/services/landlord/landlord.service';
@@ -12,6 +12,10 @@ export class LandlordListComponent implements OnInit {
 
 
   landlords: Landlord[]=[]
+  @Input()
+  idEdited=-1
+  @Output()
+  mudouId = new EventEmitter<number>();
 
   constructor(
     private landlordService : LandlordService,
@@ -19,7 +23,7 @@ export class LandlordListComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-
+    this.getLandLords()
   }
 
   getLandLords(){
@@ -31,6 +35,7 @@ export class LandlordListComponent implements OnInit {
 
   edit(id:number){
     console.log('foi editar'+id);
+    this.mudouId.emit(id)
   }
 
   del(id:number){
@@ -39,6 +44,7 @@ export class LandlordListComponent implements OnInit {
 
   onNovo(){
     console.log('abrir novo')
+    this.mudouId.emit(-1)
   }
 
 }

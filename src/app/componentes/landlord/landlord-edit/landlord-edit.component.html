@@ -1,1 +1,24 @@
-<p>landlord-edit works!</p>
+<p> Gerente - {{landlordEdited.id}}</p>
+<div class="content">
+  <form>
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" [(ngModel)]="landlordEdited.name" class="form-control" name ="nome" id="nome" aria-describedby="nome" placeholder="Entre com Nome">
+    </div>
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input type="password" [(ngModel)]="landlordEdited.password" class="form-control" name="senha" id="senha" placeholder="Senha">
+    </div>
+    <div class="form-group">
+      <label for="fone">Fone</label>
+      <input type="tel" [(ngModel)]="landlordEdited.fone" class="form-control" name="fone" id="fone" aria-describedby="fone" placeholder="Entere com telefone">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" [(ngModel)]="landlordEdited.email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Entre com email">
+    </div>
+    <button type="submit" (click)="salvar()" class="btn btn-primary">Salvar</button>
+    <button type="button" (click)="voltar()" class="btn btn-danger">Voltar</button>
+  </form>
+</div>
+

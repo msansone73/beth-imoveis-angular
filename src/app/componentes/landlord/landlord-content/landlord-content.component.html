@@ -1,3 +1,10 @@
 <p>Proprietários</p>
-<app-landlord-edit/>
-<app-landlord-list/>
+
+<app-landlord-edit
+  *ngIf="mode=='edit'"
+  [landlordEdited]="landlordEdited"
+  (voltarLista)="voltarLista($event)"/>
+
+<app-landlord-list
+  *ngIf="mode=='list'"
+  (mudouId)="alteraIdEdited($event)"/>
