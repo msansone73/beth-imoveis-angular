@@ -9,7 +9,7 @@ import { AuthenticationServiceService } from '../authentication-service.service'
 @Injectable({
   providedIn: 'root'
 })
-export class LandlordService implements OnInit {
+export class LandlordService  {
 
   apiUrl = environment.apiUrl+'landlord'
   managerLoged: Manager=this.auth.isLogged()
@@ -26,14 +26,12 @@ export class LandlordService implements OnInit {
     private http: HttpClient
   ) { }
 
-  ngOnInit(): void {
-  }
-
   public getAllByManagerId(manager: Manager): Observable<Landlord[]>{
     return this.http.get<Landlord[]>(this.apiUrl+'/manager/'+manager.id)
   }
 
   public getByIdAndManagerId(id: number, manager:Manager):Observable<Landlord>{
+    console.log(this.apiUrl+'/'+id+'/manager/'+manager.id)
     return this.http.get<Landlord>(this.apiUrl+'/'+id+'/manager/'+manager.id)
   }
 

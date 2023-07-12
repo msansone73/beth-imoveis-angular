@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import { ManagerContentComponent } from './componentes/manager/manager-content/m
 import { ManagerEditComponent } from './componentes/manager/manager-edit/manager-edit.component';
 import { LandlordContentComponent } from './componentes/landlord/landlord-content/landlord-content.component';
 import { LandlordEditComponent } from './componentes/landlord/landlord-edit/landlord-edit.component';
+import { SecInterceptor } from './services/sec.interceptor';
 
 
 @NgModule({
@@ -37,7 +38,17 @@ import { LandlordEditComponent } from './componentes/landlord/landlord-edit/land
     HttpClientModule,
     FormsModule
   ],
-  providers: [CanActivateRouteGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [CanActivateRouteGuard,
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SecInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
